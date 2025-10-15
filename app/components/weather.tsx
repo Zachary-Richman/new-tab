@@ -5,7 +5,7 @@ const fetch_url = "https://api.weather.gov/stations/KGSP/observations/latest";
 import { CiTempHigh } from "react-icons/ci";
 
 
-export const fetch_data = async (): Promise<any> =>{ // TODO: change the any
+export const fetch_data = async () =>{ // TODO: change the any
     const resp = await fetch(fetch_url);
     const json = await resp.json();
 

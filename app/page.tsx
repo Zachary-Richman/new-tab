@@ -1,5 +1,5 @@
 import Clock from "@/app/components/time/clock";
-import {fetch_data, parse_data, WeatherDisplay} from "@/app/components/weather"
+import {WeatherDisplay} from "@/app/components/weather"
 
 
 export default function Home(){
