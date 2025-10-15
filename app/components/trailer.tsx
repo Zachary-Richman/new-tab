@@ -16,14 +16,16 @@ export const Trailer = () =>{
             setMousePosition({ x: event.clientX, y: event.clientY });
             const target = event.target as HTMLElement
             if (target && target.tagName.toLowerCase() === 'a') {
-                if ("style" in trailer.current) {
-                    trailer.current.style.width = 30;
-                    trailer.current.style.height = 30;
+                if (!trailer || !trailer.current) return;
+                if ("style" in trailer?.current) {
+                    trailer.current.style.width = "30";
+                    trailer.current.style.height = "30";
                 }
             } else{
-                if ("style" in trailer.current) {
-                    trailer.current.style.width = 20;
-                    trailer.current.style.height = 20;
+                if (!trailer || !trailer.current) return;
+                if ("style" in trailer?.current) {
+                    trailer.current.style.width = "20";
+                    trailer.current.style.height = "20";
                 }
             }
         };
@@ -33,8 +35,8 @@ export const Trailer = () =>{
         const keyframes = {
             transform: `translate(${mousePosition['x']}px, ${mousePosition['y']}px)`
         }
-
-        if ("animate" in trailer.current) {
+        if (!trailer || !trailer.current) return;
+        if ("animate" in trailer?.current) {
             trailer.current.animate(keyframes, {
                 duration: 800,
                 fill: "forwards"

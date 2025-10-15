@@ -29,6 +29,7 @@ export const Grain = () => {
         gctx.putImageData(imageData, 0, 0);
 
         function animate() {
+            if (!ctx) return;
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
             // jitter offsets for movement
